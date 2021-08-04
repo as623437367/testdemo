@@ -1,32 +1,33 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-main>
+      <v-container>
+        <div class="d-flex justify-start">
+          <v-icon class="black--text ">mdi-arrow-left-thick</v-icon>
+          <h1 class="ml-2">Create Your NudgePool</h1>
+        </div>
+      </v-container>
+      <left-content></left-content>
+    </v-main>
+  </v-app>
 </template>
-
+<script>
+import leftContent from './components/leftContent.vue'
+import rightContent from './components/rightContent.vue'
+export default {
+  name: 'App',
+  components: {
+    'left-content': leftContent,
+    'right-content': rightContent,
+  },
+  data: () => ({
+    e6: 1,
+  }),
+}
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.left {
+  /* width: 300px; */
+  /* height: 600px; */
 }
 </style>
